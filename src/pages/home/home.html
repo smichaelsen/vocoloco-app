@@ -8,23 +8,13 @@
   <h2>Was möchtest du wiederholen?</h2>
   <ion-grid>
     <ion-row>
-      <ion-col col-12 col-sm-9 col-md-6>
-        <ion-card>
+      <ion-col col-12 col-sm-9 col-md-6 *ngFor="let subject of subjects">
+        <ion-card (click)="openSubject(subject)">
           <ion-card-header>
-            Englisch
+            {{ subject.title }}
           </ion-card-header>
           <ion-card-content>
-            12 Vokabeln
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col col-12 col-sm-9 col-md-6>
-        <ion-card>
-          <ion-card-header>
-            Französisch
-          </ion-card-header>
-          <ion-card-content>
-            1 Vokabel
+            {{ subject.cardsCount }} Karten
           </ion-card-content>
         </ion-card>
       </ion-col>
